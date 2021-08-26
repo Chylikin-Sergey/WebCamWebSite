@@ -1,0 +1,108 @@
+﻿@model IEnumerable<WebCamWebSite.Models.Post>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Задать вопрос";
+}
+@section metatags {
+    <meta name="description" content="Агенство MMD готово ответить на ваши вопросы связанные с работой веб моделью в Одессе." />
+}
+<div class="col-xl-5 InfoMessage ">
+    <div style="opacity:0.6;background-color:black;padding:0;padding-top:20px;text-align:center;border-radius:20px;padding-left:10px;padding-right:10px">
+        <h3 class="InfoMessage__text text-white">Ваш вопрос(ответ) рассматривается </h3>
+        <img class="w-25 h-25" src="~/Images/Symbol/_1.png" alt="Alternate Text" />
+    </div>
+</div>
+
+
+<div class="questions container body-content">
+    <div style="background-color:white;border-radius:10px;padding-left:20px;padding-right:20px;padding-bottom:20px;">
+        <div class="row">
+            <div class="questions__header col-sm-12 pt-4 text-center font-weight-bold"><h1>Если вас что-то интересует, просто задайте вопрос</h1></div>
+            @{
+                if (Model != null)
+                {
+                    <ul class="list-questions pl-xl-5 pl-3 col-xl-12">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                if (item.Messages.Count() > 0)
+                                {
+                                    var verifiedMessages = item.Messages.ToList().Where(v => v.Answer != null).OrderBy(m => m.Question.Date);
+                                    var firstGroup = verifiedMessages.FirstOrDefault();
+                                    if (firstGroup != null)
+                                    {
+                                        <li class="list-questions__li" id="li-comment-@firstGroup.Question.Id">
+                                            @Html.Partial("_Question", firstGroup.Question)
+                                            <ul class="list-questions pl-5">
+                                                <li class="list-questions__li" id="li-comment-@firstGroup.Answer.Id">@Html.Partial("_Question", firstGroup.Answer)</li>
+                                                @{
+                                                    var otherElements = verifiedMessages.Skip(1);
+                                                    if (otherElements != null)
+                                                    {
+                                                        foreach (var item1 in otherElements)
+                                                        {
+                                                            <li class="list-questions__li" id="li-comment-@firstGroup.Question.Id"> @Html.Partial("_Question", item1.Question)</li>
+                                                            <li class="list-questions__li" id="li-comment-@firstGroup.Answer.Id">@Html.Partial("_Question", item1.Answer)</li>
+                                                        }
+                                                    }
+
+                                                }
+
+                                            </ul>
+                                        </li>
+                                    }
+                                }
+                            }
+                        }
+                    </ul>
+
+                }
+            }
+
+        </div>
+        <div class="questions__panel col-xl-12">
+            <div>
+                <button class="questions__cancel-reply btn float-right" style="margin-bottom:20px"> Отменить</button>
+                <div>&nbsp</div>
+
+                @using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "onSuccess", AllowCache = false }))
+                {
+                    <input class="questions__message form-control" placeholder="Введите имя*" maxlength="13" minlength="2" type="text" name="name" required />
+                    <textarea class="questions__name form-control" name="message" placeholder="Введите сообщение*" style="margin-top:10px;min-height:70px;max-height:300px" required></textarea>
+                    <input class="question__history-id d-none" type="text" name="idAnswer" value="0" />
+                    <button class="questions__send-reply btn btn-danger" type="submit" style="margin-top:10px;margin-bottom:10px">Отправить</button>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function onSuccess() {
+        $(".InfoMessage").fadeToggle(1000, "linear").delay(1500).fadeToggle(1000, "linear");
+        $(".questions__name").val("");
+        $(".questions__message").val("");
+    }
+    $(document).ready(function () {
+        var panel = $(".questions__panel");
+        $(".message__btn-reply").on("click", function () {
+            var messageId = $(this).parents(".list-questions__li").first().prop("id");
+            messageId = Number(messageId.replace(/\D+/g, ""));
+            $(".question__history-id").val(messageId);
+            var li = $(this).parents(".list-questions__li");
+            panel.insertAfter(li.children().first());
+
+            $(".questions__cancel-reply").show();
+        });
+        $(".questions__cancel-reply").on("click", function () {
+
+            $(".question__history-id").val(0);
+            var rowUl = $(".list-questions").first().parent();
+            panel.insertAfter(rowUl);
+            $(".questions__cancel-reply").hide();
+        });
+    })
+</script>

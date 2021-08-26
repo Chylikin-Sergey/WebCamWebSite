@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @RenderSection("metatags", required: false)
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/unobtrusive-ajax")
+    @Scripts.Render("~/bundles/bootstrap")
+   
+
+    <link rel="stylesheet" type="text/css" href="~/Slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/Slick/slick-theme.css" />
+    <script type="text/javascript" src="~/Slick/slick.js"></script>
+   
+</head>
+<body>
+
+    <div class="d-flex flex-column min-vh-100 overflow-hidden">
+        <div style="color:white;padding-top:10px;background:url('../../Images/Backgrounds/pink-space-background-hd.jpg') no-repeat;background-size:cover;">
+            <div class="container body-content">
+                <div class="row header">
+                    <div class="col-lg-3">
+                        <div class="textalign-center  mb-3"><a href="@Url.Action("Index","Home")"><img src="~/Images/Backgrounds/method-draw-image.svg" style="width:200px;height:40px" /></a></div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-8 textalign-center mb-3">Предлагаем интересную и высокооплачиваемую работу для девушек в центре Одессы</div>
+                            @Html.ActionLink("Одесса, проспект Шевченко", "Contacts", "Home", new { area = "" }, new { @class = "col-md-4 textalign-center text-decoration-none" })
+                        </div>
+                        <div class="header-menu">
+                            <nav class="navbar navbar-expand-md " role="navigation">
+                                <div></div>
+
+                                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#Menu" aria-controls="Menu" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="navbar-header collapse navbar-collapse" id="Menu">
+                                    <ul class="header-list navbar-nav">
+                                        <li class="nav-item">@Html.ActionLink("Главная", "Index", "Home", new { area = "" }, new { @class = "nav-link text-uppercase" })</li>
+                                        <li class="nav-item">@Html.ActionLink("FAQ", "FAQ", "Home", new { area = "" }, new { @class = "nav-link text-uppercase" })</li>
+                                        <li class="nav-item">@Html.ActionLink("Отзывы", "Comments", "Home", new { area = "" }, new { @class = "nav-link text-uppercase" })</li>
+                                        <li class="nav-item">@Html.ActionLink("Контакты", "Contacts", "Home", new { area = "" }, new { @class = "nav-link text-uppercase" })</li>
+                                        <li class="nav-item">@Html.ActionLink("Задать вопрос", "Ask_a_Questions", "Home", new { area = "" }, new { @class = "nav-link text-uppercase" })</li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-1">
+            @RenderBody()
+        </div>
+        <footer class="bg-dark pb-3 pt-3">
+            <div class="container body-content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-img text-center"><a href="#"><img src="~/Images/Backgrounds/method-draw-image.svg" style="width:200px;height:40px" /></a></div>
+
+                    </div>
+                    <div class="col-lg-6 mt-2">
+                        <ul class="footer-list d-flex justify-content-center flex-wrap" style="list-style:none">
+                            <li class="nav-item">@Html.ActionLink("Главная", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("FAQ", "FAQ", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Отзывы", "Comments", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Контакты", "Contacts", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Задать вопрос", "Ask_a_Questions", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 mb-4">
+                        <div class="footer-phone text-white text-center ">
+                            mmd242020@gmail.com
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mb-3 mt-2">
+                    <div class="footer-header-social d-flex justify-content-center">
+                        <a class="footer_in" href="https://www.instagram.com/vikkka_mika/"></a>
+                    </div>
+                </div>
+                <div class="row text-white justify-content-center text-center" style="font-size:12px;">
+                    2021 © MMD Работа моделей Одесса<br />
+                    Работа для моделей в Одессе<br />
+                    Модель Одесса Работа
+                </div>
+            </div>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+    <script>
+        var doc = $(document);
+        doc.ready(function () {
+            var els = $(".tes");
+            var win = $(window);
+
+
+            els.each(function () {
+                if (doc.scrollTop() + win.height() > $(this).position().top + $(this).height() && !$(this).data("data-animation")) {
+                    $(this).css("opacity", 1);
+                    $(this).data("data-animation", true);
+
+                    return;
+                }
+                $(this).data("data-animation", false);
+
+
+                doc.on("scroll", function () {
+                    els.each(function () {
+                        if (doc.scrollTop() + win.height() >= $(this).position().top && !$(this).data("data-animation")) {
+                            $(this).data("data-animation", true);
+
+                            $(this).animate({ opacity: 1 }, 1000);
+                            if (els.last().data('data-animation')) {
+                                doc.off('scroll');
+                            }
+                        }
+                    });
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

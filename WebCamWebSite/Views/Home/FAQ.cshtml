@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "FAQ";
+}
+@section metatags {
+    <meta name="description" content="Часто задаваемые вопросы об условиях работы в вебкам агеестве MMD." />
+}
+<div class="container body-content">
+    <div style="background-color:white;border-radius:10px;padding-top:30px;padding-left:20px;padding-right:20px;padding-bottom:20px;font-size:20px">
+        <div style="text-align:center"> <h2 style="font-weight:bold">FAQ</h2></div>
+        <div style="text-align:center"><img src="~/Images/FAQ/1.png" style="width:90%;" alt="FAQ" /></div>
+        <br>
+        <p class="tes">Свой вопрос вы можете задать через  @Html.ActionLink("форму", "Ask_a_Questions", "Home", new { area = "" }, new { @style = "color:orangered" }) , и мы с радостью на него ответил . Если у Вас остались какие-либо сомнения, @Html.ActionLink("свяжитесь с нами", "Contacts", "Home", new { area = "" }, new { @style = "color:orangered" }) и наши опытные администраторы проконсультируют вас в любом вопросе.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"> <h5 style="color:orangered;font-size:24px">Сколько мне должно быть лет?</h5></div>
+        <p class="tes">Ограничения присутствуют только в нижней планке, вам должно быть полных 18 лет.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"> <h5 style="color:orangered;font-size:24px">Сколько я буду получать денег?</h5></div>
+        <p class="tes">Это самый сложный вопрос. Тут всё зависит от вашей усидчивости и желания зарабатывать хорошие деньги. Модели без опыта очень редко могут сразу зарабатывать много. От 500 долларов в первый месяц, с каждым последующим месяцем выше, так как растёт рейтинг на вашей странице, а соответственно и заработок</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"><h5 style="color:orangered;font-size:24px">Как часто мне будут платить зарплату?</h5></div>
+        <p class="tes">Для постоянных моделей зарплата происходит два раза в месяц без задержек.Валюта UAH.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"> <h5 style="color:orangered;font-size:24px">Какой возможен график работы?</h5></div>
+        <p class="tes">График работы подразумевает 5 робочих и 2 выходных в любой удобный для вас день. Первая смена начинаеться с 10.00 до 15.00, вторая с 16.00 до 21.00, третья с 22.00 до 3.00, четвёртая с 4.00 до 9.00</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"> <h5 style="color:orangered;font-size:24px">Я учусь в университете/работаю на другой работе, я смогу у вас работать?</h5></div>
+        <p class="tes">Да, конечно сможете. Вам будет необходимо подобрать удобный график смен, чтоб он не пересекался с вашей учебой или первой работой.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"> <h5 style="color:orangered;font-size:24px">Нужны ли какие-то документы для вас, как для работодателя?</h5></div>
+        <p class="tes">Да, вам нужен будет что-то из перечисленного: паспорт, ID карта, загран паспорт, водительские права. Эти документы нужны один раз чтоб модерация удостоверилась в подленности вашей личности и что вы совершеннолетняя.</p>
+
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;">  <h5 style="color:orangered;font-size:24px">Кто будет меня учить? Вообще будет такой человек или как это происходит?</h5></div>
+        <p class="tes">Да, всё верно. Администратор/Менеджер помогает постоянно по всему ходу работы, и решает любые вопросы которые возникают по работе, так же указывает на возможные ошибки и помогает как можно быстрее выйти на хороший результа.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"><h5 style="color:orangered;font-size:24px">Что если меня увидят родственники, друзья, знакомые?</h5></div>
+        <p class="tes">Мы работаем на американских сайтах на которых закрыт доступ к странам СНГ, а так же мы изучили полностью этот вариант, и у нас есть дополнительные меры предосторожности которые вам расскажет администратор, что сводит к 0 факт о том что вас кто то увидит либо узнаёт.</p>
+        <p class="tes">Сайты не разглашают вашу личную информацию из документов, таким образом вы всегда анонимны и скрываетесь под ником/псевдонимом.</p>
+        <div class="tes" style="text-align:center;padding-top:30px;padding-bottom:20px;border-top:solid 1px darkgray;"><h5 style="color:orangered;font-size:24px">ВЕБКАМ НЕ ТАК СТРАШЕН, КАК ЕГО РИСУЮТ</h5></div>
+        <p class="tes">Многие девушки слышали о сайтах для работы веб-моделью, но ничего не знают об их специфике. Это хобби позволяет забыть о трудностях с деньгами и каждые 2 недели получать кругленькую сумму. Что же нужно делать? Общаться через камеру, кокетничать, показывать свои таланты. Представители сильной половины человечества готовы платить за красивую картинку, на которой видят прекрасную девушку. Это сотни «мемберов» разного возраста и национальностей. Одним интересно общение со зрелыми опытными женщинами, другим — с девушками, парнями, парами. Ни одна веб-модель не останется без работы.</p>
+
+    </div>
+</div>
+
+

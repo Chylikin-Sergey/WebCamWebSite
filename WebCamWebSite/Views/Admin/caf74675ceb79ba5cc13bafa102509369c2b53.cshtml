@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebCamWebSite.Models.GroupMessage>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Входящие";
+}
+
+<div class="col-xl-11 m-auto table-responsive-xl">
+    <table class="table table-dark table-hover">
+        <thead class="thead-dark text-center">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Вопрос</th>
+                <th scope="col">Ответ</th>
+                <th scope="col">Принять/Отклонить</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @{
+                if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="d-none">@using (Ajax.BeginForm("Verified", null, new AjaxOptions() { OnSuccess = "OnSuccess", AllowCache = false }, new { id = "form-" + item.Question.Id })) { }</td>
+                            <td>@item.Question.Id<input form="form-@item.Question.Id" class="d-none" type="number" name="Id" value="@item.Question.Id" /></td>
+                            <td>@item.Question.Name</td>
+                            <td><textarea form="form-@item.Question.Id" class="bg-transparent text-white" style="min-width:250px">@item.Question.Msg</textarea></td>
+                            <td><textarea form="form-@item.Question.Id" required class="bg-transparent text-white" name="message" style="min-width:250px">Ответ</textarea></td>
+                            <td class="text-center align-middle">
+                                <input form="form-@item.Question.Id" name="Accept" class="btn btn-success" type="submit" value="Принять" />
+                                <input form="form-@item.Question.Id" name="Decline" class="btn btn-danger" type="submit" value="Отклонить" />
+                                <input form="form-@item.Question.Id" name="buttonValue" type="radio" class="d-none" />
+                            </td>
+
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function OnSuccess() {
+        $(this).parents("tr").remove();
+    }
+    $(document).ready(function () {
+
+        $("input[name = Accept],input[name = Decline]").on("click", function () {
+
+            var button = $(this);
+            var td = button.parents("td").first();
+            var radio = td.children("input[type = radio]");
+
+            if (button.prop("name") === "Accept") {
+                radio.prop("checked", true);
+            }
+            else {
+                radio.prop("checked", false);
+            }
+        });
+    })
+</script>

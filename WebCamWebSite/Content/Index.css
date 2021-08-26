@@ -1,0 +1,191 @@
+﻿.Index h1{
+    font-size:inherit;
+    font-weight:inherit;
+}
+/*----------block-girl----------*/
+.block-girl {
+    background: url(../../Images/Backgrounds/attractive-beautiful.jpg) center center no-repeat;
+    border-radius: 10px;
+    background-size: cover;
+    background-attachment: scroll !important;
+    color: black;
+    height: 650px;
+}
+
+.block-girl__mmd-agency {
+    font-size: 40px;
+}
+
+.block-girl__mmd-agency-info {
+    font-size: 17px;
+}
+
+.block-girl__mmd {
+    color: orangered
+}
+
+@media screen and (max-width:360px) {
+    .block-girl__mmd-agency-info {
+        font-size: 12px;
+    }
+
+    .block-girl__mmd-agency {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:576px) {
+    .block-girl__mmd-agency-info {
+        font-size: 14px;
+    }
+}
+/*-------------------------------------------------------------------------*/
+
+/*----------block-what-need----------*/
+.block-what-need__become-web-model {
+    color: black;
+    font-size: 1.75rem;
+}
+
+    .block-what-need__become-web-model span {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+.block-what-info__header {
+    font-size: 22px;
+    font-weight: bold;
+    color: orangered;
+}
+
+    .block-what-info__header p {
+        font-size: 18px;
+        font-weight: normal;
+        color: black;
+    }
+
+@media screen and (max-width:360px) {
+    .block-what-info__header {
+        font-size: 18px;
+    }
+
+        .block-what-info__header p {
+            font-size: 14px;
+        }
+}
+/*-------------------------------------------------------------------------*/
+
+/*----------block-proffesion-profitable----------*/
+.block-proffesion-profitable__header {
+    font-weight: bold;
+    color: orangered;
+    font-size: 1.5rem;
+}
+
+.block-proffesion-profitable__info {
+    font-size: 20px;
+}
+
+@media screen and (max-width:360px) {
+    .block-proffesion-profitable__info {
+        font-size: 16px;
+    }
+}
+/*-------------------------------------------------------------------------*/
+
+/*----------block-info----------*/
+
+.block-info__01 {
+    background: #ca014f url(/Images/Index/Background/bg-info-01.jpg) bottom right no-repeat;
+    background-size: cover;
+    display: block;
+    min-height: 340px;
+    position: relative;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 3px;
+ 
+}
+
+    .block-info__01 div {
+        position: absolute;
+        bottom: 25px;
+        font-size: 15px;
+        color: #fff;
+        line-height: 18px;
+        text-shadow: 1px 1px 2px #555;
+    }
+
+.block-info__02 {
+    background: #ca014f url(/Images/Index/Background/bg-info-02.jpg) bottom right no-repeat;
+    background-size: cover;
+    display: block;
+    min-height: 340px;
+    position: relative;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 3px;
+
+}
+
+    .block-info__02 div {
+        position: absolute;
+        bottom: 25px;
+        font-size: 15px;
+        color: #fff;
+        line-height: 18px;
+        text-shadow: 1px 1px 2px #555;
+    }
+
+.block-info__03 {
+    background: #ca014f url(/Images/Index/Background/bg-info-03.jpg) bottom right no-repeat;
+    background-size: cover;
+    display: block;
+    min-height: 340px;
+    position: relative;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 3px;
+   
+}
+
+    .block-info__03 div {
+        position: absolute;
+        bottom: 25px;
+        font-size: 15px;
+        color: #fff;
+        line-height: 18px;
+        text-shadow: 1px 1px 2px #555;
+    }
+
+    .block-info__01:hover,
+    .block-info__02:hover,
+    .block-info__03:hover {
+        transform: scale(0.97);
+    }
+
+/*-------------------------------------------------------------------------*/
+
+/*----------carousel----------*/
+.reviews-slides {
+    padding: 45px 60px 75px 60px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .reviews-slides {
+        padding: 45px 5px 75px 5px;
+    }
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+    }
+
+    .slick-dots {
+        width: 95%;
+    }
+
+}
+/*-------------------------------------------------------------------------*/

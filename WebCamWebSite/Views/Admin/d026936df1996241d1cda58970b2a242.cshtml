@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebCamWebSite.Models.Info>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Заявки";
+}
+
+<div class="col-xl-11 col-12  m-auto">
+    <button class="mt-1 btn btn-danger" id="Remove" type="button">Удалить</button>
+    <input class="mt-1" id="calendar" type="date" />
+    <button class="mt-1 btn btn-success" id="Search" type="button">Поиск</button>
+    <button class="mt-1 btn btn-info" id="Restart" type="button">Restart</button>
+</div>
+<div class="col-xl-11 m-auto table-responsive">
+
+    <table class="table table-dark table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th scope="col">ID</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Номер</th>
+                <th scope="col">Сообщение</th>
+                <th scope="col">Телеграм</th>
+                <th scope="col">Инстаграм</th>
+                <th scope="col">Дата и время</th>
+            </tr>
+        </thead>
+        <tbody id="Main">
+            @Html.Partial("_Records", Model)
+        </tbody>
+        <tfoot><tr><td colspan="9"><div id="loading" style="background:url(/Images/loading.svg) center no-repeat;width:100%;height:32px;"></div></td></tr></tfoot>
+    </table>
+
+</div>
+
+<script>
+
+        $(document).ready(function () {
+            $("#Restart").on("click", function () {
+                location.reload();
+            });
+            $("#Search").on("click", function () {
+                $("#loading").css("opacity", 0);
+                $(window).off("scroll");
+                var date = $("#calendar").val()
+                if (date != '') {
+
+                        $.ajax({
+                        url: '@Url.Action("SearchRequest", "Admin")',
+                        type: "POST",
+                        data: { date: date },
+                        cache: false,
+                     success: function (data) {
+
+                             $("#Main").html(data);
+
+                         },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+            });
+            $("#Remove").on("click", function () {
+                var check = $("#Main input[type=checkbox]:checked");
+                var array = new Array();
+                check.each(function () {
+                    array.push($(this).prop("id"));
+                })
+                if (array.length > 0) {
+                    $.ajax({
+                        url: '@Url.Action("RemoveRequest", "Admin")',
+                        type: "POST",
+                        data: { index: array },
+                        cache: false,
+                     success: function (data) {
+                         if (data) {
+                             check.each(function () {
+                                 $(this).parents("tr").remove();
+                             })
+                         }
+                         },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+
+            });
+        var countSkipElements = 10;
+        $("#loading").css("opacity", 0);
+        let loadingHeight = $("#loading").height() * 5;
+        $(window).on("scroll", (function () {
+
+            if ($(window).scrollTop() + loadingHeight > $(document).height() - $(window).height()) {
+                if ($("#loading").css("opacity") != 1) {
+                    $("#loading").css("opacity", 1);
+
+                    $.ajax({
+                        url: '@Url.Action("d026936df1996241d1cda58970b2a242", "Admin")',
+                        type: "POST",
+                        data: { count: countSkipElements },
+                        cache: false,
+                        success: function (data) {
+                            if (data != '') {
+                                $("#Main").append(data);
+                                countSkipElements += 10;
+                               
+                            }
+                            else {
+                                $("#loading").css("opacity", 0);
+                                $(window).off("scroll");
+                            }
+                            $("#loading").css("opacity", 0);
+                        },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+            }
+        }));
+
+
+        });
+
+</script>

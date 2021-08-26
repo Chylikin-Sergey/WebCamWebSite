@@ -1,0 +1,235 @@
+﻿body {
+   background-image:url('../../Images/Backgrounds/photo_2021-01-19_17-22-27.jpg');
+}
+@font-face {
+    font-family: "Comforta-Regular";
+    src: url(/Font/Comfortaa-Regular.woff2);
+}
+/*all*/
+* {
+    font-family: Comforta-Regular;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    -o-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+}
+/*header*/
+.header-social a {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.in {
+    background: url(/Images/Icons/icons-social-header.png) -60px 0 no-repeat;
+}
+
+.header-social a:hover {
+    background-position-y: -30px;
+}
+
+.header-nav a {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0px 10px 0px 10px;
+}
+
+.header a:hover {
+    color: orangered;
+}
+
+.navbar {
+    font-size: 14px !important;
+    font-weight: bold;
+    color: white;
+}
+
+.header-menu {
+    background: none;
+}
+
+.header-list {
+    text-align: center;
+}
+.tes {
+    will-change: transform;
+    position: relative;
+    opacity: 0;
+}
+
+/*footer*/
+.footer-header-social a {
+    width: 32px;
+    height: 32px;
+}
+
+.footer_in {
+    background: url(/Images/Icons/icons-social-footer.png) -64px 0 no-repeat;
+}
+
+.footer-header-social a:hover {
+    background-position-y: -32px;
+}
+
+.footer-phone {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: right;
+}
+
+    .footer-phone a {
+        border-bottom: 1px dashed white;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+        .footer-phone a:hover {
+            color: red;
+            border-color: red;
+        }
+
+.footer-list {
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+    .footer-list a:hover {
+        color: orangered;
+    }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select {
+    max-width: 280px;
+}
+
+
+/*Comments.cshtml*/
+
+.Where-row
+{
+margin-bottom:50px;
+}
+.Where-col-md-2
+{
+    margin-bottom:20px;
+    text-align:center;
+}
+.Div-where-img
+{
+    text-align:center;
+}
+.img-girl
+{
+    border-radius:100px;
+    width:100px;
+    height:100px;
+}
+
+.span-color-girl-name
+{
+    color:orangered;
+}
+.header-in-comments
+{
+    text-align:center;
+    margin-bottom:50px;
+}
+.h2-main-text-header
+{
+    margin-bottom:40px;
+    font-weight:500;
+}
+.h5-main-text-header
+{
+    text-align:center;
+}
+.h5-main-text-header span
+{
+    color:orangered;
+}
+.h6-main-text-header
+{
+    text-align:center;
+    margin-top:20px;
+}
+/*Index.cshtml Home*/
+.img-girl_index {
+   
+    width: 600px;
+    height: 400px;
+}
+
+
+.param {
+    width: 20%;
+    position: relative;
+    background-color:red !important;
+    border: 1px solid #7d9185;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .param:after, .param:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .param:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #ffffff;
+        border-width: 18px;
+        left: 50%;
+        margin-left: -18px;
+    }
+
+    .param:before {
+        border-color: rgba(125, 145, 133, 0);
+        border-bottom-color: #7d9185;
+        border-width: 19px;
+        left: 50%;
+        margin-left: -19px;
+    }
+
+@@media screen and (max-width: 768px) {
+    .footer-img {
+        text-align: center;
+    }
+
+
+    .footer-phone {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .textalign-center {
+        text-align: center;
+    }
+}

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebCamWebSite.Models.Info>
+
+@{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td><input id="@item.Id" type="checkbox" style="width:25px;height:25px;margin:0;padding:0"></td>
+        <td>@item.Id</td>
+        <td class="text-break">@item.Name</td>
+        <td class="text-break">@item.Surname</td>
+        <td class="text-break">@item.Phone</td>
+        <td class="text-break">@item.Message</td>
+        <td class="text-break">@item.TelegramNumber</td>
+        <td class="text-break">@item.Instagram</td>
+        <td>@item.Date</td>
+    </tr>
+    }
+}

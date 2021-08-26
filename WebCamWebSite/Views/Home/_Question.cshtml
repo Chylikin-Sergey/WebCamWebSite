@@ -1,0 +1,15 @@
+﻿@model WebCamWebSite.Models.Message
+
+@{
+    <div class="row message flex-nowrap" style="margin-top:50px;">
+        <div class="message__img"><img src="~/Images/Icons/Anonym.png" /></div>
+        <div class="ml-xl-4 ml-sm-4 ml-2 flex-column">
+            <div class="message__name font-weight-bold mt-2" id="name">@Model.Name</div>
+            <div class="message__date">@Model.Date</div>
+            <div class="message__msg mt-3 text-break pr-3">@Model.Msg</div>
+            <div class="message__btn-reply mt-4">Ответить</div>
+        </div>
+    </div>
+}
+
+

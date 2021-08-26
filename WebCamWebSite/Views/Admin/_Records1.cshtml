@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebCamWebSite.Models.Info>
+
+@{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td class="records1__id">@item.Id</td>
+        <td class="text-break records1__name">@item.Name</td>
+        <td class="text-break records1__surName">@item.Surname</td>
+        <td class="text-break records1__phone">@item.Phone</td>
+        <td class="text-break records1__message">@item.Message</td>
+        <td class="text-break records1__telegramNumber">@item.TelegramNumber</td>
+        <td class="text-break records1__instagram">@item.Instagram</td>
+        <td class="records1__date">@item.Date</td>
+        <td>
+            <select class="records1-status">
+                <option selected value="Не выбрано">Не выбрано</option>
+                @{
+                    List<string> status = new List<string> { "Да", "Нет", "Думает" };
+
+                    foreach (var item1 in status)
+                    {
+                        if (item1.Equals(item.state))
+                        {
+
+                            <option selected value="@item1">@item1</option>
+                        }
+                        else
+                        {
+                            <option value="@item1">@item1</option>
+                        }
+
+                    }
+                }
+            </select>
+        </td>
+    </tr>
+    }
+}

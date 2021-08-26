@@ -1,0 +1,20 @@
+﻿.sendMessage {
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+}
+
+    .sendMessage:hover {
+        background-color: black;
+        color: white;
+    }
+.Email {
+    font-size: 20px;
+}
+
+/*media*/
+@media screen and (max-width:300px) {
+    .Email {
+        font-size: 16px;
+    }
+}

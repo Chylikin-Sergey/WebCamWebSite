@@ -1,0 +1,165 @@
+﻿.questions h1{
+    font-size:inherit;
+    font-weight:inherit;
+}
+.list-questions {
+    list-style: none;
+    list-style-type: none;
+}
+
+.message__img {
+}
+
+    .message__img img {
+        border-radius: 40px;
+    }
+
+.questions__cancel-reply {
+    display: none;
+}
+
+.message__btn-reply {
+    color: coral;
+}
+
+    .message__btn-reply:hover {
+        color: orangered;
+        cursor: pointer;
+    }
+
+.questions__header {
+    font-size: 2rem;
+}
+
+
+.InfoMessage {
+    z-index:999;
+    width: 50%;
+    height: 50%;  
+    opacity: 1;
+    display:none;
+    top: 30%;
+    left: 30%;
+    position:fixed;
+}
+
+
+
+@media screen and (max-width:280px) {
+    .questions__header {
+        font-size: 1rem;
+    }
+    .message {
+        font-size: 14px;
+    }
+    .message__img img {
+        width: 32px;
+        height: 32px;
+    }
+    .list-questions:first-child {
+        padding-left: 17px !important;
+    }
+}
+@media screen and (max-width:320px) {
+    .questions__panel {
+        text-align: center;
+    }
+    .list-questions:first-child {
+        padding-left: 14px !important;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .questions__panel {
+        text-align: center;
+    } 
+}
+
+
+
+
+
+  
+    .message__date {
+        font-size: 11px;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        .InfoMessage {
+            top: 20%;
+            left: 15%;
+            width: 200px;
+            height: 300px;
+        }
+
+        .InfoMessage__text {
+            font-size: 14px;
+        }
+    }
+    /* 1.3 dpr */
+    @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi) {
+        .InfoMessage {
+            top: 20%;
+            left: 10%;
+            width: 80%;
+            height: 20%;
+        }
+
+        .InfoMessage__text {
+            font-size: 14px;
+        }
+    }
+    /*1.5 dpr */
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        .InfoMessage {
+            top: 20%;
+            left: 10%;
+            width: 80%;
+            height: 20%;
+        }
+
+        .InfoMessage__text {
+            font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-width:300px) {
+        .InfoMessage__text {
+            font-size: 14px;
+        }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( min--moz-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 320px), only screen and ( min-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( min-resolution: 192dpi) and (min-width: 320px), only screen and ( min-resolution: 2dppx) and (min-width: 320px) {
+
+        .InfoMessage__text {
+            font-size: 16px;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+
+        .InfoMessage__text {
+            font-size: 24px;
+        }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and ( min--moz-device-pixel-ratio: 2) and (min-width: 700px), only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 700px), only screen and ( min-device-pixel-ratio: 2) and (min-width: 700px), only screen and ( min-resolution: 192dpi) and (min-width: 700px), only screen and ( min-resolution: 2dppx) and (min-width: 700px) {
+
+        .InfoMessage__text {
+            font-size: 24px;
+        }
+    }
+
+    @media only screen and (min-width: 1300px) {
+
+        .InfoMessage__text {
+            font-size: 24px;
+        }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1300px), only screen and ( min--moz-device-pixel-ratio: 2) and (min-width: 1300px), only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 1300px), only screen and ( min-device-pixel-ratio: 2) and (min-width: 1300px), only screen and ( min-resolution: 192dpi) and (min-width: 1300px), only screen and ( min-resolution: 2dppx) and (min-width: 1300px) {
+
+        .InfoMessage__text {
+            font-size: 24px;
+        }
+    }

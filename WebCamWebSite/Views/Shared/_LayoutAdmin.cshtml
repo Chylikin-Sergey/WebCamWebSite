@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="row m-xl-auto ml-0 col-xl-11 col-sm-8 col-12">
+            <div class="mt-1">@Html.ActionLink("Заявки", "d026936df1996241d1cda58970b2a242", "Admin", new { area = "" }, new { @class = "btn btn-warning" })</div>
+            <div class="mt-1 ml-1 mr-1">@Html.ActionLink("Входящие", "caf74675ceb79ba5cc13bafa102509369c2b53", "Admin", new { area = "" }, new { @class = "btn btn-warning" })</div>
+            <div class="mt-1 mr-1">@Html.ActionLink("Исходящие", "b92e2f286fa5100a3aa7a550f5e85d53f93ba930", "Admin", new { area = "" }, new { @class = "btn btn-warning" })</div>
+            <div class="mt-1">@Html.ActionLink("Статус", "bae7d5be70820ed56467bd9a63744e23b47bd711", "Admin", new { area = "" }, new { @class = "btn btn-warning" })</div>
+        </div>
+    </div>
+    <div class="row">
+        @RenderBody()
+    </div>
+
+</div>
+
